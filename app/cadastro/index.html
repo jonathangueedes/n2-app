@@ -1,0 +1,50 @@
+﻿<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label for="codigoItem">Código do item</label>
+            <input type="text" id="codigoItem" class="form-control" ng-model="vm.produto.codigoItem" required />
+        </div>
+        <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <input type="text" id="tipo" class="form-control" ng-model="vm.produto.tipo" required />
+        </div>
+        <div class="form-group">
+            <label for="marca">Fabricante</label>
+            <input type="text" id="marca" class="form-control" ng-model="vm.produto.marca" required />
+        </div>
+        <div class="form-group">
+            <label for="caracteristica">Caracteristica</label>
+            <input type="text" id="caracteristica" class="form-control" ng-model="vm.produto.caracteristica" required />
+        </div>
+        <div class="form-group">
+            <label for="tamanho">Tamanho</label>
+            <input type="text" id="tamanho" class="form-control" ng-model="vm.produto.tamanho" required />
+        </div>
+        <div class="form-group">
+            <label for="cor">Cor</label>
+            <input type="text" id="cor" class="form-control" ng-model="vm.produto.cor" required />
+        </div>
+        <div class="form-group">
+            <label for="valorCompra">Valor de Compra</label>
+            <input type="text" id="valorCompra" class="form-control" ng-model="vm.produto.valorCompra" required />
+        </div>
+        <div class="form-group">
+            <label for="valorMargem">Valor de Margem</label>
+            <input type="text" id="valorMargem" class="form-control" ng-model="vm.produto.valorMargem" required />
+        </div>
+        <div class="form-group">
+            <label for="precoSugerido">Preço de Venda Sugerido</label>
+            <input type="text" id="precoSugerido" class="form-control" ng-model="vm.produto.precoSugerido" required />
+        </div>
+
+        <div class="form-group">
+            <label for="dataEntrada">Data de Entrada do Produto</label>
+            <input type="text" id="dataEntrada" class="form-control" ng-model="vm.produto.dataEntrada" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveProduto()">Save</button>
+            <button class="btn btn-warning" ng-click="vm.updateProduto()">Update</button>
+            <button class="btn btn-danger" ng-click="vm.deleteProduto()">Delete</button>
+        </div>
+    </form>
+</div>
