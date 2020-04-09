@@ -10,7 +10,7 @@
         var service = {};
 
         service.GetToken = GetToken;
-        service.GetUserId = GetUserId;
+        service.GetProdutoId = GetProdutoId;
         service.GetCurrent = GetCurrent;
         service.GetAll = GetAll;
         service.GetById = GetById;
@@ -21,9 +21,9 @@
         
         return service;
 
-        function GetUserId() {
+        function GetProdutoId() {
             // get userId token from server
-            return $.get('/app/userId');
+            return $.get('/app/estoque/userId');
         }
 
         function GetToken() {
@@ -36,7 +36,7 @@
         }
 
         function GetAll() {
-            return $http.get(apiURL).then(handleSuccess, handleError);
+            return $http.get(apiURL+ '/getAll').then(handleSuccess, handleError);
         }
 
         function GetById(_id) {
@@ -51,8 +51,8 @@
             return $http.post(apiURL + '/register', produto).then(handleSuccess, handleError);
         }
 
-        function Update(user) {
-            return $http.put(apiURL + '/' + user._id, user).then(handleSuccess, handleError);
+        function Update(produto) {
+            return $http.put(apiURL + '/' + produto._id, produto).then(handleSuccess, handleError);
         }
 
         function Delete(_id) {

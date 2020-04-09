@@ -45,12 +45,14 @@
             ProdutoService.Delete(vm.produto._id)
                 .then(function () {
                     // log user out
-                    $window.location = '/login';
+                    FlashService.Success('Produto deletado');
                 })
                 .catch(function (error) {
                     FlashService.Error(error);
                 });
         }
+
+
     }
 
 })();

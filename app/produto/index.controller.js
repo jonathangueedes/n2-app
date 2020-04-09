@@ -8,37 +8,51 @@
     function Controller($window, ProdutoService, FlashService) {
         var vm = this;
 
-        vm.user = null;
-        vm.saveUser = saveUser;
-        vm.deleteUser = deleteUser;
+        vm.deleteProduto = deleteProduto;
+        vm.listarProduto = GetAll;
+        vm.updateProduto = updateProduto;
+        vm.produto = null;
+        vm.produtoSelecionado = {};
 
-        initUser();
+        vm.setProdutoSelecionado = setProduto;
 
-        function initUser() {
-            // get current user data in the API
-            ProdutoService.GetUserId().then(function (userId) {
-                ProdutoService.GetCurrent(userId).then(function (user) {
-                        vm.user = user;
-                    });
-            });
-            
+
+        GetAll();
+
+
+        function setProduto(produto) {
+            vm.produtoSelecionado = produto;
+            $window.scrollTo(0, 435);
+
+        }
+ 
+        function GetAll() {
+            ProdutoService.GetAll()
+                .then(function (list_) {
+                    vm.listarProduto = list_;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    FlashService.Error(error);
+                });
         }
 
-        function saveUser() {
-            ProdutoService.Update(vm.user)
+        function deleteProduto(_id) {
+            ProdutoService.Delete(_id)
                 .then(function () {
-                    FlashService.Success('User updated');
+                    // log user out
+                    FlashService.Success('Excluido com Sucesso')
                 })
                 .catch(function (error) {
                     FlashService.Error(error);
                 });
         }
 
-        function deleteUser() {
-            ProdutoService.Delete(vm.user._id)
+        function updateProduto() {
+            ProdutoService.Update(vm.produtoSelecionado)
                 .then(function () {
                     // log user out
-                    $window.location = '/login';
+                    FlashService.Success('Alterado com Sucesso')
                 })
                 .catch(function (error) {
                     FlashService.Error(error);

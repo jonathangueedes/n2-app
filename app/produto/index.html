@@ -1,25 +1,93 @@
-﻿<h1>My Account</h1>
-<div class="form-container">
-    <form method="post">
-        <div class="form-group">
-            <label for="firstName">First name</label>
-            <input type="text" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input type="text" id="lastName" class="form-control" ng-model="vm.user.lastName" required />
-        </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" class="form-control" ng-model="vm.user.username" required />
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" ng-model="vm.user.password" />
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
-            <button class="btn btn-danger" ng-click="vm.deleteUser()">Delete</button>
-        </div>
-    </form>
+﻿<h2>Listagem de Produtos</h2>
+    <div class="form-container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th scope="col">Código</th>
+                <th scope="col">Data</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Caracteristica</th>
+                <th scope="col">Tamanho</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Valor de Compra</th>
+                <th scope="col">Valor de Margem</th>
+                <th scope="col">Preço Sugerigo</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="x in vm.listarProduto track by x._id">
+
+
+              <tr>
+                <td class="text-center">
+                  <input type="checkbox" ng-model="produto.selected" ng-change="vm.setProdutoSelecionado(x)"/>
+                </td>
+                <td>{{x.codigoItem}}</td>
+                <td>{{x.dataEntrada}}</td>
+                <td>{{x.tipo}}</td>
+                <td>{{x.marca}}</td>
+                <td>{{x.caracteristica}}</td>
+                <td>{{x.tamanho}}</td>
+                <td>{{x.cor}}</td>
+                <td>{{x.valorCompra}}</td>
+                <td>{{x.valorMargem}}</td>
+                <td>{{x.precoSugerido}}</td>
+                <td scope="col"><button class="btn btn-primary" ng-click="vm.deleteProduto(x._id)">Delete </button><td>
+                  
+              </tr>
+            </tbody>
+          </table>
+
+          <hr/>
+     
+          <form method="post">
+            <div class="form-group">
+                <label for="codigoItem">Código do item</label>
+                <input type="text" id="codigoItem" class="form-control" ng-model="vm.produtoSelecionado.codigoItem" required />
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <input type="text" id="tipo" class="form-control" ng-model="vm.produtoSelecionado.tipo" required />
+            </div>
+            <div class="form-group">
+                <label for="marca">Fabricante</label>
+                <input type="text" id="marca" class="form-control" ng-model="vm.produtoSelecionado.marca" required />
+            </div>
+            <div class="form-group">
+                <label for="caracteristica">Caracteristica</label>
+                <input type="text" id="caracteristica" class="form-control" ng-model="vm.produtoSelecionado.caracteristica" required />
+            </div>
+            <div class="form-group">
+                <label for="tamanho">Tamanho</label>
+                <input type="text" id="tamanho" class="form-control" ng-model="vm.produtoSelecionado.tamanho" required />
+            </div>
+            <div class="form-group">
+                <label for="cor">Cor</label>
+                <input type="text" id="cor" class="form-control" ng-model="vm.produtoSelecionado.cor" required />
+            </div>
+            <div class="form-group">
+                <label for="valorCompra">Valor de Compra</label>
+                <input type="text" id="valorCompra" class="form-control" ng-model="vm.produtoSelecionado.valorCompra" required />
+            </div>
+            <div class="form-group">
+                <label for="valorMargem">Valor de Margem</label>
+                <input type="text" id="valorMargem" class="form-control" ng-model="vm.produtoSelecionado.valorMargem" required />
+            </div>
+            <div class="form-group">
+                <label for="precoSugerido">Preço de Venda Sugerido</label>
+                <input type="text" id="precoSugerido" class="form-control" ng-model="vm.produtoSelecionado.precoSugerido" required />
+            </div>
+    
+            <div class="form-group">
+                <label for="dataEntrada">Data de Entrada do Produto</label>
+                <input type="text" id="dataEntrada" class="form-control" ng-model="vm.produtoSelecionado.dataEntrada" required />
+            </div>
+           </form>
+
 </div>
+
+<div class="form-group">
+  <button class="btn btn-primary" ng-click="vm.updateProduto()">Salvar</button>
+</div>
+
