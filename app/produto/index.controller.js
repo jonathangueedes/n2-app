@@ -42,6 +42,7 @@
                 .then(function () {
                     // log user out
                     FlashService.Success('Excluido com Sucesso')
+                    setTimeout(() => window.location.reload(), 2000);
                 })
                 .catch(function (error) {
                     FlashService.Error(error);
@@ -53,6 +54,12 @@
                 .then(function () {
                     // log user out
                     FlashService.Success('Alterado com Sucesso')
+                    setTimeout(() => window.location.reload(), 2000);
+                    $window.scrollTo(0, 0);
+
+
+                    
+                    
                 })
                 .catch(function (error) {
                     FlashService.Error(error);

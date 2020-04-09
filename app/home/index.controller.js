@@ -5,10 +5,17 @@
         .module('app')
         .controller('Home.IndexController', Controller);
 
+
+
     function Controller(UserService) {
         var vm = this;
 
         vm.user = null;
+
+
+
+
+
 
         initUser();
 

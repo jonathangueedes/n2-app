@@ -6,6 +6,13 @@
         .config(config)
         .run(run);
 
+    
+        var date = new Date();
+        // get the date as a string
+        var n = date.toLocaleString('pt-BR');
+        // get the time as a string
+        document.getElementById('time').innerHTML = 'Data ' + n;
+
     function config($stateProvider, $urlRouterProvider) {
         // default route
         $urlRouterProvider.otherwise("/");
