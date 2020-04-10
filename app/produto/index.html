@@ -11,6 +11,7 @@
                 <th scope="col">Caracteristica</th>
                 <th scope="col">Tamanho</th>
                 <th scope="col">Cor</th>
+                <th scope="col">Valor de Etiqueta</th>
                 <th scope="col">Valor de Compra</th>
                 <th scope="col">Valor de Margem</th>
                 <th scope="col">Preço Sugerigo</th>
@@ -30,6 +31,7 @@
                 <td>{{x.caracteristica}}</td>
                 <td>{{x.tamanho}}</td>
                 <td>{{x.cor}}</td>
+                <td>{{x.valorEtiqueta}}</td>
                 <td>{{x.valorCompra}}</td>
                 <td>{{x.valorMargem}}</td>
                 <td>{{x.precoSugerido}}</td>
@@ -66,6 +68,11 @@
                 <label for="cor">Cor</label>
                 <input type="text" id="cor" class="form-control" ng-model="vm.produtoSelecionado.cor" required />
             </div>
+            <div class="form-group">
+              <label for="valorEtiqueta">Valor de Etiqueta</label>
+              <input type="number" id="valorEtiqueta" class="form-control" ng-model="vm.produtoSelecionado.valorEtiqueta" required />
+          </div>
+  
             <div class="form-group">
                 <label for="valorCompra">Valor de Compra</label>
                 <input type="number" id="valorCompra" class="form-control" ng-model="vm.produtoSelecionado.valorCompra" required />
