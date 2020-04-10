@@ -1,2 +1,33 @@
-﻿<h1>Hi {{vm.user.firstName}}!!</h1>
+﻿<head>
+    <meta charset="utf-8" />
+    <title>Estoque</title>
+
+    <link href="/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app-content/app.css" rel="stylesheet" />
+</head>
+
+<style>
+    .centraliza {
+        width: 555px;
+        margin: auto;
+        height: 70%;
+        color:palevioletred;
+    }
+    </style>
+<h1 class= "col-md-6;" style="font-family: 'Franklin Gothic Medium';
+     color: blue;
+     text-align: center;">
+     Welcome, {{vm.user.firstName}}!!
+</h1>
+
+
+<h2 style="text-align: center; color: blue;">
+    Utilize as abas para a navegação e cadastro de novos produtos !!!
+    
+</h2>
+
+
+<div class="flash-message" ng-if="flash">
+    <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+
 
