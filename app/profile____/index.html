@@ -1,0 +1,120 @@
+﻿<h2></h2>
+<div class="form-container">
+    <form method="post">
+    
+
+<div class="row">
+
+   <div class="col-md-10 col-xs-4">
+    <div class="form-group">
+      <label for="idadeUser">Nome:</label>
+      <input type="text" class="form-control" name="nomeUser" placeholder="Idade"  ng-model= "vm.user.firstName" required>
+    </div>
+  </div>
+
+    <div class="col-md-2 col-xs-2">
+    <div class="form-group">
+      <label for="codigoUser">Inscrição:</label>
+      <input type="number" class="form-control" name="codigoUser" placeholder="Código"  ng-model= "vm.user.codigoUser" required>
+    </div>
+  </div>
+
+ 
+</div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="idadeUser">Idade:</label>
+      <input type="number" class="form-control" name="idadeUser" placeholder="Idade"  ng-model= "vm.user.idadeUser" required>
+    </div>
+  </div>
+
+    <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="alturaUser">Altura:</label>
+      <input type="number" class="form-control" name="volumeBolsa" placeholder="Altura"  ng-model= "vm.user.alturaUser" required>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="pesoUser">Peso:</label>
+      <input type="number" class="form-control" name="pesoUser" placeholder="Peso"  ng-model= "vm.user.pesoUser" required>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="idadeUser">Sexo:</label>
+      <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="idadeUser" ng-model= "vm.user.idadeUser" require >
+            <option selected disabled>Escolha uma opção</option>
+            <option>Masculino</option>
+            <option>Feminimo</option>
+            <option>Indefinido</option>
+
+        </select>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+        <div class="form-group">
+            <label for="tipo">Endereço</label>
+            <input type="text" id="enderecoCiente" placeholder="Endereço" class="form-control" ng-model="vm.user.endereco" required />
+        </div>
+
+        <div class="row">
+
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="idadeUser">CEP:</label>
+      <input type="text" class="form-control"  placeholder="Cep" name="cepUser" ng-model= "vm.user.cep" required>
+    </div>
+  </div>
+
+    <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="cidadeUser">Cidade:</label>
+      <input type="text" class="form-control" " placeholder="Cidade" name="cidadeUser" ng-model= "vm.user.cidade" required>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="estadoUser">Estado:</label>
+      <input type="text" class="form-control"  placeholder="Estado" name="cidadeUser" ng-model= "vm.user.estado" required>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+        <div class="form-group">
+            <label for="descricaoTreinoUser">Descrição Treino</label>
+            <textarea class = "form-control" id="descricaoTreinoUser" class="form-control" ng-model="vm.user.descricaoTreinoUser" rows="5" required/>
+        </div>
+   
+        <div class="form-group">
+            <label for="dataCadastro">Data de Cadastro</label>
+            <input type="date" id="dataCadastro" class="form-control" ng-model="vm.user.dataCadastro" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveUser()">Atualizar</button>
+        </div>
+    </form>
+</div>
+
+
+

@@ -37,21 +37,8 @@
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
-            })
-            .state('produto', {
-                url: '/produto',
-                templateUrl: 'produto/index.html',
-                controller: 'Produto.IndexController',
-                controllerAs: 'vm',
-                data: { activeTab: 'produto' }
-            })
-            .state('cadastro', {
-                url: '/cadastro',
-                templateUrl: 'cadastro/index.html',
-                controller: 'Cadastro.IndexController',
-                controllerAs: 'vm',
-                data: { activeTab: 'cadastro' }
             });
+     
     }
 
     function run($http, $rootScope, $window) {
