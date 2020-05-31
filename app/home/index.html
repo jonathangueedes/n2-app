@@ -11,24 +11,25 @@
         width: 555px;
         margin: auto;
         height: 70%;
-        color:palevioletred;
+        color: palevioletred;
     }
-    </style>
-<h1 class= "col-md-6;" style="font-family: 'Franklin Gothic Medium';
+</style>
+<h1 class="col-md-6;" style="font-family: 'Franklin Gothic Medium';
      color: blue;
      text-align: center;">
-     Welcome, {{vm.user.name}}!!
+    Bem vindo, {{vm.user.name}}!!
 
 </h1>
 
 
 <h2 style="text-align: center; color: blue;">
-    Utilize as abas para a navegação e cadastro de novos produtos !!!
-    
+    Seu dias de treinos são {{vm.user.dia_semana}} <br> Seu horario preferido de treino é {{vm.user.periodo}}
+
+
+
+
 </h2>
 
 
 <div class="flash-message" ng-if="flash">
     <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
-
-

@@ -14,96 +14,211 @@
             <input type="password" id="password" class="form-control" ng-model="vm.user.password" />
         </div>
 
-<div class="row">
+        <div class="row">
 
-  <div class="col-md-3 col-xs-4">
-    <div class="form-group">
-      <label for="idadeUser">Idade:</label>
-      <input type="number" class="form-control"   ng-model="vm.user.idade" required>
-    </div>
-  </div>
+            <div class="col-md-3 col-xs-4">
+                <div class="form-group">
+                    <label for="idadeUser">Idade:</label>
+                    <input type="number" class="form-control" ng-model="vm.user.idade" required>
+                </div>
+            </div>
 
-    <div class="col-md-3 col-xs-4">
-    <div class="form-group">
-      <label for="alturaUser">Altura (em cm):</label>
-      <input type="number" class="form-control"   ng-model="vm.user.altura" required>
-    </div>
-  </div>
+            <div class="col-md-3 col-xs-4">
+                <div class="form-group">
+                    <label for="alturaUser">Altura (em cm):</label>
+                    <input type="number" class="form-control" ng-model="vm.user.altura" required>
+                </div>
+            </div>
 
-  <div class="col-md-3 col-xs-4">
-    <div class="form-group">
-      <label for="pesoUser">Peso (em kg):</label>
-      <input type="number" class="form-control"   ng-model="vm.user.peso" required>
-    </div>
-  </div>
+            <div class="col-md-3 col-xs-4">
+                <div class="form-group">
+                    <label for="pesoUser">Peso (em kg):</label>
+                    <input type="number" class="form-control" ng-model="vm.user.peso" required>
+                </div>
+            </div>
 
-   <div class="col-md-3 col-xs-4">
-    <div class="form-group">
-      <label for="sexoUser">Sexo:</label>
-      <select class="form-control" data-size="5" data-live-search="true" data-width="100%" ng-model="vm.user.sexo" require >
+            <div class="col-md-3 col-xs-4">
+                <div class="form-group">
+                    <label for="sexoUser">Sexo:</label>
+                    <select class="form-control" data-size="5" data-live-search="true" data-width="100%" ng-model="vm.user.sexo" require>
             <option selected disabled>Escolha uma opção</option>
             <option>Masculino</option>
             <option>Feminimo</option>
             <option>Indefinido</option>
 
         </select>
-    </div>
-  </div>
-  
-
-</div>
-
- 
-</div>
+                </div>
+            </div>
 
 
-
-
-        <div class="form-group">
-            <label for="tipo">Endereço</label>
-            <input type="text" id="enderecoCiente" placeholder="Endereço" class="form-control" ng-model="vm.user.endereco" required />
         </div>
 
-        <div class="row">
 
-  <div class="col-md-4 col-xs-4">
-    <div class="form-group">
-      <label for="idadeUser">CEP:</label>
-      <input type="text" class="form-control"  placeholder="Cep" name="cepUser" ng-model="vm.user.cep" required>
-    </div>
-  </div>
+</div>
+
+
+
+
+<div class="form-group">
+    <label for="tipo">Endereço</label>
+    <input type="text" id="enderecoCiente" placeholder="Endereço" class="form-control" ng-model="vm.user.endereco" required />
+</div>
+
+<div class="row">
 
     <div class="col-md-4 col-xs-4">
-    <div class="form-group">
-      <label for="cidadeUser">Cidade:</label>
-      <input type="text" class="form-control"  placeholder="Cidade" name="cidadeUser" ng-model="vm.user.cidade" required>
+        <div class="form-group">
+            <label for="idadeUser">CEP:</label>
+            <input type="text" class="form-control" placeholder="Cep" name="cepUser" ng-model="vm.user.cep" required>
+        </div>
     </div>
-  </div>
 
-  <div class="col-md-4 col-xs-4">
-    <div class="form-group">
-      <label for="estadoUser">Estado:</label>
-      <input type="text" class="form-control"  placeholder="Estado" name="cidadeUser" ng-model="vm.user.estado" required>
+    <div class="col-md-4 col-xs-4">
+        <div class="form-group">
+            <label for="cidadeUser">Cidade:</label>
+            <input type="text" class="form-control" placeholder="Cidade" name="cidadeUser" ng-model="vm.user.cidade" required>
+        </div>
     </div>
-  </div>
+
+    <div class="col-md-4 col-xs-4">
+        <div class="form-group">
+            <label for="estadoUser">Estado:</label>
+            <input type="text" class="form-control" placeholder="Estado" name="estadoUser" ng-model="vm.user.estado" required>
+        </div>
+    </div>
 
 </div>
 </div>
 
 
+<b>Objetivos</b><br>
 
+<div class="row">
+
+    <div class="col-md-2 col-xs-2">
         <div class="form-group">
-            <label for="descricaoTreinoUser">Objetivos</label>
-            <textarea class = "form-control" id="descricaoTreinoUser" class="form-control" ng-model="vm.user.objetivos" rows="5" required/>
+            <input type="checkbox" ng-model="vm.user.hipertrofia" [ngModelOptions]="{standalone: true}" />
+            <label for="checkbox">Hipertrofia</label>
+
         </div>
-   
+    </div>
+
+    <div class="col-md-2 col-xs-2">
         <div class="form-group">
-            <label for="dataCadastro">Ultima alteração</label>
-            <input type="text" id="dataCadastro" class="form-control" disabled ng-model="vm.user.dataCadastro" required />
+            <input type="checkbox" ng-model="vm.user.condicionamento" [ngModelOptions]="{standalone: true}" />
+            <label for="checkbox">Condicionamento</label>
+
         </div>
+    </div>
+
+    <div class="col-md-2 col-xs-2">
         <div class="form-group">
-            <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
-            <button class="btn btn-danger" ng-click="vm.deleteUser()">Delete</button>
+            <input type="checkbox" ng-model="vm.user.saude" [ngModelOptions]="{standalone: true}" />
+            <label for="checkbox">Saúde</label>
         </div>
-    </form>
+    </div>
+
+</div>
+
+<b>Periodo</b><br>
+
+<div class="row">
+
+    <div class="col-md-2 col-xs-2">
+        <div class="form-group">
+            <input type="checkbox" ng-model="vm.user.manha" [ngModelOptions]="{standalone: true}" />
+            <label for="checkbox">Manha</label>
+
+        </div>
+    </div>
+
+    <div class="col-md-2 col-xs-2">
+        <div class="form-group">
+            <input type="checkbox" ng-model="vm.user.tarde" [ngModelOptions]="{standalone: true}" />
+            <label for="checkbox">Tarde</label>
+
+        </div>
+    </div>
+
+    <div class="col-md-2 col-xs-2">
+        <div class="form-group">
+            <input type="checkbox" ng-model="vm.user.noite" [ngModelOptions]="{standalone: true}" />
+            <label for="checkbox">Noite</label>
+        </div>
+    </div>
+
+</div>
+
+<b>Dias da semana</b><br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.domingo" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Dom</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.segunda" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Seg</label>
+
+            </div>
+        </div>
+
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.terca" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Ter</label>
+            </div>
+        </div>
+
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.quarta" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Qua</label>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.quinta" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Qui</label>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.sexta" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Sex</label>
+            </div>
+        </div>
+        <div class="col-md-1 col-xs-1">
+            <div class="form-group">
+                <input type="checkbox" ng-model="vm.user.sabado" [ngModelOptions]="{standalone: true}" />
+                <label for="checkbox">Sab</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <label for="descricaoTreinoUser">Informações Complementares</label>
+    <textarea class="form-control" id="descricaoTreinoUser" class="form-control" ng-model="vm.user.info_complement" rows="5" required />
+</div>
+
+<div class="form-group">
+    <label for="dataCadastro">Ultima alteração</label>
+    <input type="text" id="dataCadastro" class="form-control" disabled ng-model="vm.user.dataCadastro" required />
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
+    <button class="btn btn-danger" ng-click="vm.deleteUser()">Delete</button>
+</div>
+
+
+</form>
 </div>
