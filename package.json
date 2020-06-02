@@ -21,5 +21,8 @@
         "request": "^2.58.0",
         "rootpath": "^0.1.2"
     },
-    "license": "MIT"
+    "license": "MIT",
+      "scripts": {
+    "start": "node server.js"
+  }
 }
