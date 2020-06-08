@@ -22,7 +22,7 @@
         "rootpath": "^0.1.2"
     },
     "license": "MIT",
-      "scripts": {
-    "start": "node server.js"
-  }
+    "scripts": {
+        "start": "node server.js"
+    }
 }
