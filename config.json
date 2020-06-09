@@ -1,4 +1,4 @@
-﻿{
+{
     "apiUrl": "https://ft-treino-webapi.azurewebsites.net/api",
     "secret": "APP SECRET"
 }
