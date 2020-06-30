@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function() {
     'use strict';
 
     angular
@@ -6,7 +6,7 @@
         .factory('UserService', Service);
 
     function Service($http, $q) {
-        var apiURL = "http://localhost:9050/api/users";
+        var apiURL = "https://ft-treino-webapi.azurewebsites.net/api/users";
         var service = {};
 
         service.GetToken = GetToken;
@@ -18,12 +18,17 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
-        
+        service.getLocation = getLocation
+
         return service;
 
         function GetUserId() {
             // get userId token from server
             return $.get('/app/userId');
+        }
+
+        function getLocation(cep) {
+            return $http.get('https://www.mapquestapi.com/geocoding/v1/address?key=qpubI4QAdPNoujXALvnGARDDK2E9kqt7&inFormat=kvp&outFormat=json&location=' + cep + '&thumbMaps=false');
         }
 
         function GetToken() {
@@ -68,7 +73,7 @@
         function handleError(res) {
             return $q.reject(res.data);
         }
-        
+
     }
 
 })();
