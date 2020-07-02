@@ -1,4 +1,4 @@
 {
-    "apiUrl": "https://fttreino-api.azurewebsites.net/api/users",
+    "apiUrl": "https://fttreino-api.azurewebsites.net/api",
     "secret": "APP SECRET"
 }
