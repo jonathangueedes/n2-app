@@ -6,7 +6,7 @@
         .factory('UserService', Service);
 
     function Service($http, $q) {
-        var apiURL = "https://ft-treino-webapi.azurewebsites.net/api/users";
+        var apiURL = "https://fttreino-api.azurewebsites.net/api/users";
         var service = {};
 
         service.GetToken = GetToken;
