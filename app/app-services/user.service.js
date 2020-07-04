@@ -6,7 +6,8 @@
         .factory('UserService', Service);
 
     function Service($http, $q) {
-        var apiURL = "https://ft-treino-webapi.azurewebsites.net/api/users";
+        var apiURL = "https://fttreino-api.azurewebsites.net/api/users";
+        //var apiURL = "http://localhost:9050/api/users";
         var service = {};
 
         service.GetToken = GetToken;
@@ -19,6 +20,7 @@
         service.Update = Update;
         service.Delete = Delete;
         service.getLocation = getLocation
+        service.nearLocation = nearLocation
 
         return service;
 
@@ -63,6 +65,11 @@
         function Delete(_id) {
             return $http.delete(apiURL + '/' + _id).then(handleSuccess, handleError);
         }
+
+        function nearLocation(coordenadas) {
+            return $http.post(apiURL + '/location', coordenadas).then(handleSuccess, handleError);
+        }
+
 
         // private functions
 

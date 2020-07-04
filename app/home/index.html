@@ -7,6 +7,30 @@
 </head>
 
 <style>
+    #tabela {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: blue;
+    }
+    
+    #tabela table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+    
+    #tabela table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    
+    #tabela th,
+    td {
+        font-size: 18px;
+        text-align: center;
+    }
+    
     .centraliza {
         width: 555px;
         margin: auto;
@@ -22,13 +46,33 @@
 </h1>
 
 
+
 <h2 style="text-align: center; color: blue;">
-    Seu dias de treinos são {{vm.user.dia_semana}} <br> Seu horario preferido de treino é {{vm.user.periodo}}
-
-
-
+    Estes usuários estão procurando um parceiro de treino em um raio de 15km<br>
 
 </h2>
+
+<div id="tabela">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Idade
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="proximo in vm.proximo">
+                <td class="proximo-detail negrito">{{proximo.name}}</td>
+                <td class="proximo-detail">{{proximo.idade}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 <div class="flash-message" ng-if="flash">

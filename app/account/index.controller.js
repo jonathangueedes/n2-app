@@ -32,8 +32,6 @@
                 var { lat: latitude, lng: longitude } = response.data.results[0].locations[0].latLng;
                 vm.user.latitude = latitude;
                 vm.user.longitude = longitude;
-                console.log(vm.user.latitude);
-                console.log(vm.user.longitude);
 
                 console.log(vm.user)
 
